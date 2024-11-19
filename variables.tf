@@ -19,6 +19,9 @@ variable "ebs_size" {
 variable "vpc_security_group_ids" {
 }
 
+variable "security_group_id" {
+}
+
 variable "vpc_id" {
 }
 
