@@ -16,7 +16,7 @@ variable "instance_type" {
 variable "ebs_size" {
 }
 
-variable "security_group_id" {
+variable "vpc_security_group_ids" {
 }
 
 variable "vpc_id" {
