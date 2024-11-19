@@ -15,7 +15,7 @@ resource "aws_instance" "ec2_server" {
   }
 
   tags = {
-    teleport.dev/creator = "scott@goteleport.com"
+    "teleport.dev/creator" = "scott@goteleport.com"
   }
 }
 
