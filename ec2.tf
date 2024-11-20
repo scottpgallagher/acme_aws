@@ -1,6 +1,6 @@
 resource "aws_instance" "ec2_server" {
   
-  ami                    = "ami-0ea3c35c5c3284d8"
+  ami                    = "ami-0ea3c35c5c3284d82"
   instance_type          = var.instance_type
   key_name               = var.aws_key_pair_name
   subnet_id              = var.subnet_id
