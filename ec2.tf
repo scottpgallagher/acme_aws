@@ -12,10 +12,6 @@ resource "aws_instance" "ec2_server" {
     volume_size           = var.ebs_size
     volume_type           = "gp2"
   }
-
-  tags = {
-    "teleport.dev/creator" = "scott@goteleport.com"
-  }
 }
 
 resource "aws_security_group" "ec2_sg" {
