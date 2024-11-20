@@ -4,6 +4,8 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.39"
     }
+  }
+}
 
 provider "aws" {
  profile = var.aws_profile
