@@ -4,7 +4,6 @@ resource "aws_instance" "ec2_server" {
   instance_type = var.instance_type
   key_name               = var.aws_key_pair_name
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   ebs_optimized          = true
 
   root_block_device {
@@ -12,29 +11,4 @@ resource "aws_instance" "ec2_server" {
     volume_size           = var.ebs_size
     volume_type           = "gp2"
   }
-}
-
-resource "aws_security_group" "ec2_sg" {
-  name        = "ec2_sg_security-group"
-  description = "AWS Security Group"
-  vpc_id      = var.vpc_id
-}
-
-resource "aws_security_group_rule" "ingress_allow_22_tcp_all" {
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.ec2_sg.id
-}
-
-
-resource "aws_security_group_rule" "linux_egress_allow_0-65535_all" {
-  type              = "egress"
-  from_port         = 0
-  to_port           = 0
-  protocol          = "-1"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.ec2_sg.id
 }
