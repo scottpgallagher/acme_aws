@@ -12,7 +12,7 @@ provider "aws" {
   region = var.aws_region
   default_tags {
     tags = {
-      "teleport.dev/creator" = scott@goteleport.com
+      "teleport.dev/creator" = var.user
     }
   }
 }
