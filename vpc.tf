@@ -27,7 +27,7 @@ resource "aws_subnet" "acme_corp_subnet" {
 
 resource "aws_security_group" "acme_corp" {
   name        = "acme_corp_${random_id.instance_id.hex}"
-  description = "base rules for national parks demo"
+  description = "base rules for acme corp"
   vpc_id      = aws_vpc.acme_corp_vpc.id
 
 }
